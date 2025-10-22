@@ -52,7 +52,7 @@ for n=k:n_max
         F = [F; sos(s)];
         c_vec = [c_vec; c];
     end
-    p = replace(p, x_triu(1), 1-sum(x_triu(2:end))); % enforce sum(X(:))=1 constraint
+    p = replace(p, x_triu(1), 1/2-sum(x_triu(2:end))); % enforce sum(X(:))=1 constraint
     p = p - lower;
     F = [F; sos(p)];
 
@@ -71,7 +71,7 @@ for n = k:n_max
     A = [];
     b = [];
     Aeq = ones(1,N);
-    beq = 1;
+    beq = 1/2;
     lb = zeros(N,1);
     ub = ones(N,1);
 
@@ -100,8 +100,9 @@ end
 
 %% Display results
 
+format shortg
 display('Table with rows n, upper bound on u_n, upper bound on ell_n, lower bound on ell_n:')
-[(d:n_max)',upper_bounds,lower_bounds,lower_bounds_sdp]'
+round([(d_sos:n_max)',upper_bounds,lower_bounds,lower_bounds_sdp]', 2)
 
 
 %% Helper function
