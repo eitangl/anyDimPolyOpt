@@ -1,5 +1,5 @@
 # Constructing bounds for any-dimensional polynomial problems
-Code producing the numerical results from the paper "Any-dimensional polynomial optimization via De Finetti theorems" by Eitan Levin and Venkat Chandrasekaran.
+Code producing the numerical results from the paper ["Any-dimensional polynomial optimization via De Finetti theorems"](https://arxiv.org/abs/2507.15632) by Eitan Levin and Venkat Chandrasekaran.
 
 ## Scripts:
 This repo contains the following scripts, which generate the results from the paper:
